@@ -4,8 +4,7 @@ const timeZones = [
     { location: "auckland", tz: "Pacific/Auckland" },
     { location: "bahrain", tz: "Asia/Bahrain" },
     { location: "bangkok", tz: "Asia/Bangkok" },
-    { location: "berlin", tz: "Europe/Berlin" },
-    { location: "buenos-aires", tz: "America/Argentina/Buenos_Aires" },
+    { location: "berlin", tz: "Europe/Berlin" },,
     { location: "cairo", tz: "Africa/Cairo" },
     { location: "chicago", tz: "America/Chicago" },
     { location: "dubai", tz: "Asia/Dubai" },
@@ -30,7 +29,7 @@ const setCurrentLocation = () => {
     currentCityElement.innerHTML = `${localTimeZone.replace("_", " ").split("/")[1]}`
 
     let currentDateElement = document.querySelector("#current-location .current-date");
-    currentDateElement.innerHTML = moment.tz(localTimeZone).format("dddd Do, YYYY");
+    currentDateElement.innerHTML = moment.tz(localTimeZone).format("dddd, MMM Do YYYY");
 
     let currentTimeElement = document.querySelector("#current-location .current-time");
     currentTimeElement.innerHTML = moment.tz(localTimeZone).format("h:mm:ss [<span>]A[</span>]");
@@ -47,11 +46,36 @@ const setLocationPreview = () => {
     newArray.forEach(item => {
         let cityObject = document.querySelector(`#${item.location}`);
         let dateObject = cityObject.querySelector(".date");
-        dateObject.innerHTML = moment.tz(item.tz).format("dddd Do, YYYY");
+        dateObject.innerHTML = moment.tz(item.tz).format("dddd, MMM Do YYYY");
         let timeObject = cityObject.querySelector(".time");
         timeObject.innerHTML = moment.tz(item.tz).format("h:mm:ss [<span>]A[</span>]");
     })
 }
 
+const setLocationSelection = (event) => {
+    let city = event.target.value;
+    let cityHTML = "";
+    let mainComponent = document.querySelector("#display");
+    
+    timeZones.forEach(timeZone => {
+      if (city === timeZone.location) {
+        cityHTML = `
+          <div id=${timeZone.location} class="city-date-container">
+            <div class="city-date">
+              <h3>${timeZone.tz.replace("_", " ").split("/")[1]}</h3>
+              <small class="date">${moment.tz(timeZone.tz).format("dddd, MMM Do YYYY")}</small>
+            </div>
+            <h2 class="time">${moment.tz(timeZone.tz).format("h:mm:ss [<span>]A[</span>]")}</h2>
+          </div>
+        `
+      }
+      return cityHTML;
+    })
+    mainComponent.innerHTML = cityHTML
+}
+
 setInterval(setCurrentLocation, 1000);
 setInterval(setLocationPreview, 1000);
+
+let changeLocation = document.querySelector("#time-zone");
+changeLocation.addEventListener("change", setLocationSelection)
