@@ -8,86 +8,46 @@
     <link rel="stylesheet" href="./src/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
-    <title>SheCodes World Clock</title>
+    <title>World Clock</title>
 </head>
 
 <body>
+  <div id="world-clock" class="world-clock-container">
+    <header>
+      <a href="/" aria-label="Reload App">
+        <h1>World Clock</h1>
+      </a>
+      <img src="./images/logo text.gif" width="720" height="300" alt="SheCodes Logo" aria-label="Reload" class="logo" />
+    </header>
+      
     <main>
-        <div id="world-clock" class="world-clock-container">
-            <header>
-                <a href="/"><h1>World Clock</h1></a>
-                <img src="./images/logo text.gif" alt="SheCodes Logo" width="720" height="300" />
-            </header>
+      <div id="city-select" class="select-city">
+        <select name="city-time-date" id="time-zone">
+          <optgroup>
+            <option value="">Select City</option>
+          </optgroup>
+        </select>
+      </div>
 
-            <div id="city-select" class="select-city">
-                <select name="city-time-date" id="time-zone">
-                    <optgroup>
-                        <option value="">Select a City</option>
-                        <option value="addis-ababa">Addis Ababa</option>
-                        <option value="auckland">Auckland</option>
-                        <option value="bahrain">Bahrain</option>
-                        <option value="bangkok">Bangkok</option>
-                        <option value="berlin">Berlin</option>
-                        <option value="cairo">Cairo</option>
-                        <option value="chicago">Chicago</option>
-                        <option value="dubai">Dubai</option>
-                        <option value="hong-kong">Hong Kong</option>
-                        <option value="london">London</option>
-                        <option value="los-angeles">Los Angeles</option>
-                        <option value="moscow">Moscow</option>
-                        <option value="nairobi">Nairobi</option>
-                        <option value="new-york">New York</option>
-                        <option value="paris">Paris</option>
-                        <option value="sao-paulo">São Paulo</option>
-                        <option value="singapore">Singapore</option>
-                        <option value="sydney">Sydney</option>
-                        <option value="tokyo">Tokyo</option>
-                        <option value="vancouver">Vancouver</option> 
-                        <option value="washington">Washington, DC</option>  
-                    </optgroup>
-                </select>
-            </div>
+      <div id="current-location" class="current-location">
+        <span>
+          <small>📌 Your Estimated Current Location</small>
+          <p class="current-city"></p>
+        </span>
 
-           <div id="current-location" class="current-loc">
-              <span>
-                <small>📌 Your Estimated Current Location</small>
-                <div class="current-city"></div>
-              </span>
-              <div class="current-date"></div>
-              <div class="current-time"></div>
-           </div>
+        <p class="current-date"></p>
+        <p class="current-time"></p>
+      </div>
 
-            <div id="display" class="display-city">
-                <div id="new-york" class="city-date-container">
-                    <div class="city-date">
-                       <h3>New York</h3>
-                       <small class="date"></small>
-                    </div>
-                    <h2 class="time"></h2>
-                </div>
-
-                <div id="london" class="city-date-container">
-                    <div class="city-date">
-                       <h3>London</h3>
-                       <small class="date"></small>
-                    </div>
-                    <h2 class="time"></h2>    
-                </div>
-
-                <div id="hong-kong" class="city-date-container">
-                    <div class="city-date">
-                        <h3>Hong Kong</h3>
-                        <small class="date"></small>
-                    </div>
-                    <h2 class="time"></h2>    
-                </div>
-            </div>
-        </main>
+      <div id="display" class="display-city"></div>
+    </main>
+    
     <footer>
         This project was coded by <a href="#">Rediet Kifle</a>, 
-        open-sourced on <a href="https://github.com/Speck249/shecodes-world-clock">GitHub</a> 
-        and hosted on <a href="https://project-shecodes-world-clock.netlify.app">Netlify</a>.
+        open-sourced on <a href="https://github.com/Speck249/shecodes-world-clock" target="_blank">GitHub</a> 
+        and hosted on <a href="https://project-shecodes-world-clock.netlify.app" target="_blank">Netlify</a>.
     </footer>
-    <script src="./src/index.js"></script>
+  </div>  
+  <script src="./src/index.js"></script>
 </body>
 </html>
