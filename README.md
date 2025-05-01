@@ -28,5 +28,3 @@ The World Clock App is a user-friendly application that displays the current loc
 
 ### Contributing
 Contributions are welcome! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request.
-
-Thanks for stopping by!
