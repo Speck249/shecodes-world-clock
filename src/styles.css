@@ -1,132 +1,141 @@
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto Flex", sans-serif;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body {
-    background-color:#f9f7fe;
-}
-
-.world-clock-container, 
-.current-loc, 
-.display-city {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.45rem;
+  margin-top: 3.5rem;
+  background-color: #f9f7fe;
 }
 
 .world-clock-container {
-    align-items: center;
-    width: 420px;
-    padding: 0.5rem;
-    margin: 2rem auto;
-    border: none;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  max-width: 100%;
+  padding: 1rem 0;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: #fff;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 header a {
-    color: #000;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
+}
+
+header, main, footer {
+  width: 350px;
+  max-width: 100%;
 }
 
 h1 {
-    font-size: 25px;
-    font-weight: bold;
-    padding: 1rem 0;
+  font-size: 1.75rem;
 }
 
-img {
-    width: 115px;
-    height: 50px;
-}
-
-.select-city, .display-city {
-    width: 350px;
-}
-
-.select-city {
-    padding: 1.5rem 0;
+.logo {
+  width: 125px;
+  height: 55px;
 }
 
 .select-city select {
-    width: 100%;
-    height: 40px;
-    padding: 0.5rem;
-    outline: none;
-    border: 0.5px solid silver;
-    border-radius: 3px;
+  width: 100%;
+  padding: 0.5rem;
+  outline: none;
+  border: 0.5px solid silver;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
-select:hover {
-    cursor: pointer;
+.current-location {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  padding: 1rem;
 }
 
-.current-loc {
-    width: 90%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+.current-location .current-city {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 2;
 }
 
-.current-loc .current-city {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.8;
+.current-location .current-date,
+.current-location .current-time,
+.city-date small,
+footer {
+  font-size: 13px;
 }
 
-.current-loc .current-date,
-.current-loc .current-time {
-    font-size: 14px;
-    line-height: 1.6;
+.current-location .current-date,
+.current-location .current-time,
+.city-date h3 {
+  line-height: 1.6;
 }
 
 .display-city {
-    padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.25rem;
+  max-width: 100%;
 }
 
 .city-date-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0;
-    border-bottom: 1px silver dashed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px silver dashed;
 }
 
 .city-date h3 {
-    font-size: 24px;
-    font-weight: bolder;
-    line-height: 1.5;
+  font-size: 22px;
 }
 
 .city-date small {
-    color: #A0A0A0;
+  color: #a0a0a0;
 }
 
 .city-date-container h2 {
-    font-size: 35px;
+  font-size: 32px;
+  width: 50%;
+}
+
+.city-date {
+  width: 45%;
 }
 
 span {
-    font-size: 11px;
-    font-weight: bold;
-    color: purple;
+  font-size: 11px;
 }
 
 footer {
-    font-size: 13px;
-    text-align: center;
-    padding: 1rem;
+  text-align: center;
+  line-height: 1.5;
+  padding: 1rem;
 }
 
-footer a {
-    text-decoration: none;
-    color: purple;
+footer a, span {
+  text-decoration: none;
+  color: purple;
 }
